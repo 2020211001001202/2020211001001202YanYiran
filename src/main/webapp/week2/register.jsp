@@ -40,7 +40,7 @@
                 <input type="radio" name="gender" id="gender"   required>Male
                 <input type="radio" name="gender"    required>Female<br>
 
-                <button type="submit" class="btn btn-primary" id="btn-reg">注册</button>
+                <button type="submit" class="btn btn-primary" id="btn-reg">register</button>
 
             </form>
         </div>
