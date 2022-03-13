@@ -34,11 +34,12 @@
                 <input type="password" name="password" id="password" class="form-control" placeholder="Please input a password" required><br>
                 <label>Email</label>
                 <input type="email" name="email" id="email" class="form-control" placeholder="Please enter email address" required maxLength="16"><br>
-                <label>Date of Birth</label>
-                <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Please enter birthday" required><br>
                 <label>Gender</label>
                 <input type="radio" name="gender" id="gender"   required>Male
-                <input type="radio" name="gender"    required>Female<br>
+                <input type="radio" name="gender"    required>Female<br><br>
+
+                <label>Date of Birth</label>
+                <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Please enter birthday" required><br>
 
                 <button type="submit" class="btn btn-primary" id="btn-reg">register</button>
 
