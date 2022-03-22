@@ -1,30 +1,99 @@
 package com.YanYiran.week3.demo;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.*;
 
 public class RegisterServlet extends HttpServlet {
+    Connection con = null;
+    public void init(){
+        ServletContext context =getServletContext();
+        String driver=context.getInitParameter("driver");
+        String url=context.getInitParameter("url");
+        String username=context.getInitParameter("username");
+        String password=context.getInitParameter("password");
+
+        try {
+            Class.forName(driver);
+            con= DriverManager.getConnection(url,username,password);
+            System.out.println("Connection --> in JDBCDemoServlet"+con);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("register serlvet doGet");
+        response.sendRedirect("./register.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username =request.getParameter("username");
-        String password =request.getParameter( "password");
-        String email =request.getParameter( "email");
-        String gender =request.getParameter( "gender");
-        String birthDate =request.getParameter( "birthDate");
-
+        System.out.println("register servlet dopost");
         PrintWriter writer = response.getWriter();
-        writer.println("<br> username:"+username);
-        writer.println("<br> password:"+password);
-        writer.println("<br> email:"+email);
-        writer.println("<br> gender:"+gender);
-        writer.println("<br> birthDate:"+birthDate);
-        writer.close();
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        String gender = request.getParameter("gender");
+        String birthDate = request.getParameter("birthday");
+//        java.sql.Date releaseDate = java.sql.Date.valueOf(birthDate);
+        System.out.println(username);
+        System.out.println(password);
+        System.out.println(email);
+        System.out.println(gender);
+        System.out.println(birthDate);
 
+        try {
+            String sql = "insert into usertable (username,password,email,gender,birthDate) values(\'"+username+"\',\'"
+                    +password+"\',\'"+email+"\',\'"+gender+"\',\'"+birthDate+"\')";
+            con.setAutoCommit(false);
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            preparedStatement.executeUpdate();
+            con.commit();
+            System.out.println("insert successfully");
+            sql = "select * from usertable";
+            con.setAutoCommit(false);
+            preparedStatement = con.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            writer.println("<table border=\"1\">");
+            writer.println("<tr>");
+            writer.println("<th>ID</th>");
+            writer.println("<th>username</th>");
+            writer.println("<th>password</th>");
+            writer.println("<th>email</th>");
+            writer.println("<th>gender</th>");
+            writer.println("<th>birthDate</th>");
+            writer.println("</tr>");
+            while (resultSet.next()) {
+                writer.println("<tr>");
+                writer.println("<td>"+resultSet.getString("id")+"</td>");
+                writer.println("<td>"+resultSet.getString("username")+"</td>");
+                writer.println("<td>"+resultSet.getString("password")+"</td>");
+                writer.println("<td>"+ resultSet.getString("email")+"</td>");
+                writer.println("<td>"+resultSet.getString("gender")+"</td>");
+                writer.println("<td>"+ resultSet.getString("birthDate")+"</td>");
+                writer.println("<tr>");
+            }
+            writer.println("</table>");
+            con.commit();
+
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

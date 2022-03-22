@@ -39,7 +39,7 @@
                 <input type="radio" name="gender"    required>Female<br><br>
 
                 <label>Date of Birth</label>
-                <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Please enter birthday" required><br>
+                <input type="text" name="birthday" id="birthday" class="form-control" placeholder="Please enter birthday" required><br>
 
                 <button type="submit" class="btn btn-primary" id="btn-reg">register</button>
 
