@@ -1,6 +1,7 @@
 com\YanYiran\week4\demo\JDBCDemoServlet.class
 com\YanYiran\week2\demo\HelloWorldServlet.class
 com\YanYiran\week4\demo\ConfigDemo2Servlet.class
+com\YanYiran\week5\demo\LoginServlet.class
 com\YanYiran\week3\demo\LifeCycleServlet.class
 com\YanYiran\week4\demo\ConfigDemoServlet.class
 com\YanYiran\week3\demo\RegisterServlet.class
