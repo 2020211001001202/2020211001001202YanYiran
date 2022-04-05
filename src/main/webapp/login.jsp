@@ -6,8 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="header.jsp"%>
-<h2>LOGIN</h2>
-                </div>
+<h1>LOGIN</h1>
+<%
+if(!(request.getAttribute("message")==null)){
+    out.println(request.getAttribute("message"));
+}
+%>
+
 <form action="/YanYiran2020211001001202/login" method="post">
                 <label>Username</label>
                 <input type="text" name="username" id="username" class="form-control" placeholder="Enter one Username" required autofocus><br>
@@ -16,5 +21,4 @@
                 <button type="submit" class="btn btn-primary" id="btn-reg">login</button>
 </form>
 
-</div>
 <%@include file="footer.jsp"%>

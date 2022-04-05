@@ -17,8 +17,8 @@
                 <label>Email</label>
                 <input type="email" name="email" id="email" class="form-control" placeholder="Please enter email address" required ><br><br>
                 <label>Gender</label>
-                <input type="radio" name="gender" id="gender"   required>Male
-                <input type="radio" name="gender"    required>Female<br><br>
+                <input type="radio" name="gender" id="gender" value="male"   required>Male
+                <input type="radio" name="gender" value="female"    required>Female<br><br>
 
                 <label>Date of Birth</label>
                 <input type="text" name="birthday" id="birthday" class="form-control" placeholder="Please enter birthday" required><br><br>
