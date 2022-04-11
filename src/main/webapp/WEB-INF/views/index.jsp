@@ -1,7 +1,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="header.jsp"%>
-<h1><%= "Welcome to my home page" %>
+<h1><%= "Welcome to may home page" %>
     <h2>Welcome to my online shop home page.</h2> <br>
     <form method="get" target='_blank' action="search">
         <input type="text" name="txt" size=30/>

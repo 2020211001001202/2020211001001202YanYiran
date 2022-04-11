@@ -1,11 +1,15 @@
 com\YanYiran\week4\demo\JDBCDemoServlet.class
 com\YanYiran\week2\demo\HelloWorldServlet.class
-com\YanYiran\week4\demo\ConfigDemo2Servlet.class
-com\YanYiran\week5\demo\LoginServlet.class
+com\YanYiran\model\User.class
 com\YanYiran\week6\demo\JDBCServletContextListener.class
+com\YanYiran\dao\UserDao.class
 com\YanYiran\week3\demo\LifeCycleServlet.class
 com\YanYiran\week4\demo\ConfigDemoServlet.class
 com\YanYiran\week6\demo\RedirectServlet.class
 com\YanYiran\week3\demo\RegisterServlet.class
+com\YanYiran\controller\HomeServlet.class
+com\YanYiran\week4\demo\ConfigDemo2Servlet.class
+com\YanYiran\week5\demo\LoginServlet.class
+com\YanYiran\dao\IUserDao.class
 com\example\YanYiran2020211001001202\HelloServlet.class
 com\YanYiran\week6\demo\SearchServlet.class
