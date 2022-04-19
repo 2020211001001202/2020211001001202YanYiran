@@ -1,4 +1,5 @@
-<%@ page import="com.YanYiran.model.User" %><%--
+<%@ page import="com.YanYiran.model.User" %>
+<%--
   Created by IntelliJ IDEA.
   User: 86181
   Date: 2022/4/5
@@ -9,16 +10,22 @@
 <%@include file="header.jsp"%>
 <h1>User Info</h1>
 <%
- User user=(User) request.getAttribute("user");
+    Cookie [] allCookies=request.getCookies();
+    for(Cookie c:allCookies){
+        out.println("<br/>"+c.getName()+"---"+c.getValue());
+    }
+%>
+<%
+ User u=(User) session.getAttribute("user");
 %>
 
 <table>
     <tr>
-        <td>Username:</td><td><%=user.getUsername()%></td>
-        <td>password:</td><td><%=user.getPassword()%></td>
-        <td>email:</td><td><%=user.getEmail()%></td>
-        <td>gender:</td><td><%=user.getbirthDate()%></td>
-        <td>birthDte:</td><td><%=user.getGender()%></td>
+        <td>Username:</td><td><%=u.getUsername()%></td>
+        <td>password:</td><td><%=u.getPassword()%></td>
+        <td>email:</td><td><%=u.getEmail()%></td>
+        <td>gender:</td><td><%=u.getGender()%></td>
+        <td>birthDate:</td><td><%=u.getbirthDate()%></td>
     </tr>
 
 </table>

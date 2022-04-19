@@ -15,7 +15,7 @@
         <td>password:</td><td><%=request.getAttribute("password")%></td>
         <td>email:</td><td><%=request.getAttribute("email")%></td>
         <td>gender:</td><td><%=request.getAttribute("gender")%></td>
-        <td>birthDte:</td><td><%=request.getAttribute("birthDate")%></td>
+        <td>birthDate:</td><td><%=request.getAttribute("birthDate")%></td>
     </tr>
 
 </table>
