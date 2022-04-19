@@ -4,12 +4,13 @@ import com.YanYiran.dao.UserDao;
 import com.YanYiran.model.User;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
-
+@WebServlet("/updateUser")
 public class UpdateUserServlet extends HttpServlet {
     Connection con=null;
     @Override

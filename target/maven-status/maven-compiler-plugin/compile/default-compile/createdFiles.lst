@@ -1,4 +1,5 @@
 com\YanYiran\week4\demo\JDBCDemoServlet.class
+com\YanYiran\controller\LogoutServlet.class
 com\YanYiran\week2\demo\HelloWorldServlet.class
 com\YanYiran\model\User.class
 com\YanYiran\week6\demo\JDBCServletContextListener.class
@@ -11,5 +12,6 @@ com\YanYiran\controller\HomeServlet.class
 com\YanYiran\week4\demo\ConfigDemo2Servlet.class
 com\YanYiran\week5\demo\LoginServlet.class
 com\YanYiran\dao\IUserDao.class
+com\YanYiran\controller\UpdateUserServlet.class
 com\example\YanYiran2020211001001202\HelloServlet.class
 com\YanYiran\week6\demo\SearchServlet.class
