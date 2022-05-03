@@ -34,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
 
 
         //System.out.println("register serlvet doGet");
@@ -54,7 +54,7 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String email = request.getParameter("email");
         String gender = request.getParameter("gender");
-        String birthDate = request.getParameter("birthday");
+        String birthDate = request.getParameter("birthDate");
 //        java.sql.Date releaseDate = java.sql.Date.valueOf(birthDate);
         System.out.println(username);
         System.out.println(password);
@@ -112,7 +112,10 @@ public class RegisterServlet extends HttpServlet {
             //request.getRequestDispatcher("userList.jsp").forward(request,response);
             //System.out.println("i am in RegisterServlet-->doPost()--> after forward()");
 
-            response.sendRedirect("login.jsp");
+            //response.sendRedirect("login.jsp");
+
+
+            response.sendRedirect("login");
 
 
 

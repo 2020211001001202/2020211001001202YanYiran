@@ -1,4 +1,5 @@
 com\YanYiran\week4\demo\JDBCDemoServlet.class
+com\YanYiran\controller\AdminHomeServlet.class
 com\YanYiran\controller\LogoutServlet.class
 com\YanYiran\week2\demo\HelloWorldServlet.class
 com\YanYiran\YYRfilter\FrontEndAuthenticationFilter.class
