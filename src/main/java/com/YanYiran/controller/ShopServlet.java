@@ -1,6 +1,7 @@
 package com.YanYiran.controller;
 
 import com.YanYiran.dao.ProductDao;
+import com.YanYiran.model.Category;
 import com.YanYiran.model.Product;
 
 import javax.servlet.ServletException;
@@ -13,34 +14,49 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "/admin/productList",value = "/admin/productList")
-public class ProductListServlet extends HttpServlet {
-
+@WebServlet(name = "ShopServlet",value="/shop")
+public class ShopServlet extends HttpServlet {
     Connection con=null;
 
+    @Override
     public void init() throws ServletException{
         super.init();
 
         con=(Connection) getServletContext().getAttribute("con");
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Category category=new Category();
+
+        List<Category> categoryList= null;
+        try {
+            categoryList = category.findAllCategory(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.setAttribute("categoryList",categoryList);
 
         ProductDao productDao=new ProductDao();
+        List<Product> productList=null;
         try {
-            List<Product> productList=productDao.findAll(con);
-            request.setAttribute("productList",productList);
-        } catch (SQLException throwables) {
+            if(request.getParameter("categoryId")==null)
+            {
+                productList=productDao.findAll(con);
+            }else
+            {
+                int categoryId=Integer.parseInt(request.getParameter("categoryId"));
+                productList=productDao.findByCategoryId(categoryId,con);
+            }
+        }catch (SQLException throwables){
             throwables.printStackTrace();
         }
-        String path="/WEB-INF/views/admin/productList.jsp";
+        request.setAttribute("productList",productList);
+        String path ="/WEB-INF/views/shop.jsp";
         request.getRequestDispatcher(path).forward(request,response);
-    }
 
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
-
-
 }

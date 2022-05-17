@@ -1,3 +1,4 @@
+com\YanYiran\controller\ShopServlet.class
 com\YanYiran\controller\LogoutServlet.class
 com\YanYiran\YYRfilter\FrontEndAuthenticationFilter.class
 com\YanYiran\model\User.class
@@ -7,6 +8,7 @@ com\YanYiran\week4\demo\ConfigDemoServlet.class
 com\YanYiran\week6\demo\RedirectServlet.class
 com\YanYiran\week3\demo\RegisterServlet.class
 com\YanYiran\controller\HomeServlet.class
+com\YanYiran\controller\GetlmgServlet.class
 com\YanYiran\week4\demo\ConfigDemo2Servlet.class
 com\YanYiran\dao\IUserDao.class
 com\YanYiran\dao\IProductDao.class
@@ -24,3 +26,4 @@ com\YanYiran\dao\ProductDao.class
 com\example\YanYiran2020211001001202\HelloServlet.class
 com\YanYiran\controller\ProductListServlet.class
 com\YanYiran\week6\demo\SearchServlet.class
+com\YanYiran\controller\ProductDetailServlet.class
