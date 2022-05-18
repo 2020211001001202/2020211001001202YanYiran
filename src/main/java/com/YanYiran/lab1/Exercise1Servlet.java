@@ -34,7 +34,9 @@ public class Exercise1Servlet extends HttpServlet {
             index = new Integer(index.intValue()+1);
         }
 
-        out.println("since loading ,this servlet has been accessed "+index+" times");
+        out.println("<h1>Yan Yiran  <br>"+
+                "2020211001001202 <br>" +
+                "since loading ,this servlet has been accessed "+index+" times</h1>");
 
        context.setAttribute("index",index);
     }
