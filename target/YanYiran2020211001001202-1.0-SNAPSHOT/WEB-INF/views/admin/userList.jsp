@@ -39,7 +39,7 @@
 					<!-- loop_start -->
 					<sql:setDataSource var="myDS"
 										driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-										url="jdbc:sqlserver://localhost;databaseName=userdb;"
+										url="jdbc:sqlserver://localhost:1433;database=userdb;encrypt=false"
 										user="sa"
 										password="admin123456789"/>
 					<sql:query var="allUser" dataSource="${myDS}">
