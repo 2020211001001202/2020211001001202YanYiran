@@ -103,7 +103,7 @@ public class CartServlet extends HttpServlet {
 
     private void displayCart(HttpServletRequest request, HttpServletResponse response)
     throws ServletException,IOException{
-        request.setAttribute("message","Your Cart");
+        request.setAttribute("message","Your cart");
         request.getRequestDispatcher("/WEB-INF/views/cart.jsp").forward(request,response);
     }
 
