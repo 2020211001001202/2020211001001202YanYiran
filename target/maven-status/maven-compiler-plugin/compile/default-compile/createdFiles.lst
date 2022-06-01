@@ -5,6 +5,7 @@ com\YanYiran\week3\demo\RegisterServlet.class
 com\YanYiran\controller\OrderDetailsServlet.class
 com\YanYiran\controller\HomeServlet.class
 com\YanYiran\model\Item.class
+com\YanYiran\Lab3\calServlet.class
 com\YanYiran\dao\IUserDao.class
 com\YanYiran\controller\CartServlet.class
 com\YanYiran\model\Category.class
